@@ -1,6 +1,6 @@
 <app-hero-search></app-hero-search>
 
-<div class="bg-gray-900 text-center">
+<div class="bg-gray-950 text-center">
   <h2 class="text-white text-2xl font-bold pt-4 mb-4">Top Heroes</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 content-center p-6">
     <a *ngFor="let hero of heroes$ | async" routerLink="/detail/{{ hero.id }}" class="group">
