@@ -1,0 +1,12 @@
+
+<div class="bg-gray-950">
+  <div *ngIf="hero" class="bg-gray-900 text-white p-6 rounded-lg mt-5">
+    <button mat-raised-button class="bg-red-500 text-slate-100 p-2 rounded mb-4" type="button" (click)="goBack()">
+      Return
+    </button>
+    <h2 class="text-3xl mb-2">{{ hero.name | uppercase }}</h2>
+    <div class="text-gray-400">ID: {{ hero.id }}</div>
+    <img class="h-96 object-cover w-96 rounded-lg mb-4" [src]="hero.thumbnail.path + '.' + hero.thumbnail.extension" alt="{{ hero.name }}" />
+    <p class="text-lg mb-4">{{ hero.description }}</p>
+  </div>
+</div>

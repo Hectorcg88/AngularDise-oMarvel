@@ -1,0 +1,30 @@
+<div class="absolute inset-x-0 top-0 flex justify-center">
+  <div class="flex flex-col relative text-left items-center ml-1 mt-5">
+    <mat-form-field class="example-full-width w-72 h-20">
+      <mat-label class="text-black">Hero Search</mat-label>
+      <input matInput [formControl]="heroName" [matAutocomplete]="auto" class="bg-gray-800 text-white rounded px-4 py-2 mt-2 focus:outline-none focus:border-blue-500">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let hero of heroes$ | async" [routerLink]="['/detail', hero.id]" class="block py-2 px-4 w-full text-left" onmouseover="this.style.backgroundColor='#EF4444'; this.style.color='white';" onmouseout="this.style.backgroundColor='#fff'; this.style.color='black'">{{ hero.name }}</mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+</div>
+
+
+
+
+<!--<div class="flex flex-col relative text-left items-center">
+  <mat-form-field class="example-full-width">
+    <mat-label>Hero Search</mat-label>
+    <input matInput [formControl]="heroName" [matAutocomplete]="auto" />
+
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let hero of heroes$ | async">
+        <a routerLink="/detail/{{ hero.id }}">
+          {{ hero.name }}
+        </a>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>-->
+

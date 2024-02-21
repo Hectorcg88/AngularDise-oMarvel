@@ -1,0 +1,14 @@
+<app-hero-search></app-hero-search>
+
+<div class="bg-gray-900 text-center">
+  <h2 class="text-white text-2xl font-bold pt-4 mb-4">Top Heroes</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 content-center p-6">
+    <a *ngFor="let hero of heroes$ | async" routerLink="/detail/{{ hero.id }}" class="group">
+      <div class="relative overflow-hidden rounded-lg shadow-lg">
+        <img mat-card-image [src]="hero.thumbnail.path + '.' + hero.thumbnail.extension" alt="{{ hero.name }}" class="w-96 h-96 transition-transform duration-300 transform group-hover:scale-105">
+        <div class="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity duration-300"></div>
+        <p class="absolute bottom-0 left-0 w-full bg-red-700 text-white py-2 px-4 text-center font-semibold truncate">{{ hero.name }}</p>
+      </div>
+    </a>
+  </div>
+</div>

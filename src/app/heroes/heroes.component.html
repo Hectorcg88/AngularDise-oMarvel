@@ -1,0 +1,18 @@
+<app-hero-search></app-hero-search>
+<div class="m-1">
+  <h2 class="text-xl font-semibold mb-2 text-white text-center">Heroes</h2>
+  <ul class="flex flex-col gap-y-1 items-start">
+    <li *ngFor="let hero of heroes$ | async" class="w-96 bg-gray-700 p-2 text-white rounded text-sm hover:bg-red-900 hover:scale-105 duration-300 cursor-pointer" [routerLink]="['/detail', hero.id]">
+      <span class="font-bold">{{ hero.id }}</span> - <span class="text-gray-300">{{ hero.name }}</span>
+    </li>
+  </ul>
+  <div class="mt-2 flex items-center justify-center">
+    <button class="bg-slate-900 text-white p-1 rounded-full mr-2 w-8" (click)="goToPreviousPage()">
+      &lt;
+    </button>
+    <span class="text-white mx-3">Page {{ currentPage + 1 }}</span>
+    <button class="bg-slate-900 text-white p-1 rounded-full ml-2 w-8" (click)="goToNextPage()">
+      &gt;
+    </button>
+  </div>
+</div>

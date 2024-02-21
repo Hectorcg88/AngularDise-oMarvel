@@ -1,0 +1,18 @@
+<div class="flex flex-col h-screen">
+  <div class="bg-red-700 py-8 px-6 flex items-center justify-between" style="background-color: #ed1d24;">
+    <div>
+      <img routerLink="/dashboard" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/2560px-Marvel_Logo.svg.png" alt="Marvel Logo" class="w-24 cursor-pointer">
+    </div>
+    <div class="flex flex-row gap-x-4">
+      <button mat-raised-button routerLink="/dashboard" color="warn">
+        Dashboard
+      </button>
+      <button mat-raised-button routerLink="/heroes" color="warn">Heroes</button>
+    </div>
+  </div>
+  <div class="bg-gray-950 flex-grow">
+    <div class="flex flex-col justify-center items-center">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
